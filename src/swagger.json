@@ -1,0 +1,93 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "My API",
+    "description": "My API description",
+    "version": "1.0.0",
+    "contact": {
+      "name": "API Support",
+      "url": "http://www.example.com/support",
+      "email": "humbertofejr@gmail.com"
+    }
+  },
+"paths":{
+  "/categories":{
+    "get":{
+      "tags":[
+        "categories"
+      ],
+      "summary":"List all categories",
+      "description":"List all categories",
+      "operationId":"listCategories",
+      "responses":{
+        "200":{
+          "description":"Success",
+          "content":{
+            "application/json":{
+              "schema":{
+                "type":"array",
+                "items":{
+                  "type":"object",
+                  "properties":{
+                    "id":{
+                      "type":"string"
+                    },
+                    "name":{
+                      "type":"string"
+                    },
+                    "description":{
+                      "type":"string"
+                    },
+                    "created_at":{
+                      "type":"Date"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "post":{
+      "tags":[
+        "categories"
+      ],
+      "summary":"Create a category",
+      "description":"Create a new category",
+      "operationId":"createCategory",
+      "requestBody":{
+        "description":"Category to create",
+        "content":{
+          "application/json":{
+            "schema":{
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "name": "Category Test",
+                "description": "Category 1 description"
+              }
+            }
+          }
+        },
+        "required":true
+      },
+      "responses":{
+        "201":{
+          "description":"Category created"
+        },
+        "500":{
+          "description":"Internal server error"
+        }
+      }
+    }
+  }
+}
+}
