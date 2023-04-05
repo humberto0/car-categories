@@ -1,3 +1,3 @@
 # Car Categories
 
-Uma aplicação que faz um CRUD de categorias de carros usando Node.js e TypeScript permitiria que uma revendedora de carros gerenciasse as categorias de carros em seu inventário.
+An application that CRUDs car categories using Node.js and TypeScript would allow a car dealership to manage the car categories in its inventory.
